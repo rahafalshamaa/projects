@@ -26,6 +26,13 @@ class Customercontroller extends Controller
         $customer->whatsapp = $request->whatsapp;
         $customer->web = $request->web;
         $customer->facebook = $request->facebook;
+        if(isset( $request->image))
+        {
+            $image_name = rand() . time() . '.' . $request->image->getClientOriginalExtension();
+        $customer->image = $image_name;
+        $request->image->move('upload', $image_name);
+
+        }
         $customer->save();
         return back();
 
@@ -55,6 +62,13 @@ class Customercontroller extends Controller
         $customer->whatsapp = $request->whatsapp;
         $customer->web = $request->web;
         $customer->facebook = $request->facebook;
+        if(isset( $request->image))
+        {
+            $image_name = rand() . time() . '.' . $request->image->getClientOriginalExtension();
+        $customer->image = $image_name;
+        $request->image->move('upload', $image_name);
+
+        }
         $customer->save();
         return redirect('/customer/all');
     }

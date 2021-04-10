@@ -26,6 +26,8 @@ class CreateCustomersTable extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('web')->nullable();
             $table->string('facebook')->nullable();
+            $table->string('image')->nullable();
+
             $table->timestamps();
         });
     }

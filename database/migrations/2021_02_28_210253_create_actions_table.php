@@ -18,6 +18,7 @@ class CreateActionsTable extends Migration
             $table->string('action_type')->nullable();
             $table->string('subject')->nullable();
             $table->date('date')->nullable();
+            $table->string('image')->nullable();
             $table->bigInteger('customers_id')->unsigned();
             $table->foreign('customers_id')->references('id')->on('customers')->onDelete('cascade');
             $table->timestamps();

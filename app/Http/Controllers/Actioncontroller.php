@@ -22,14 +22,20 @@ class Actioncontroller extends Controller
         $action->subject = $request->subject;
         $action->date = $request->date;
         $action->customers_id = $request->customers_id;
+        if(isset( $request->image))
+        {
+            $image_name = rand() . time() . '.' . $request->image->getClientOriginalExtension();
+        $action->image = $image_name;
+        $request->image->move('upload', $image_name);
 
+        }
         $action->save();
         return back();
 
     }
     public function all($id)
     {
-        $c=Customer::find($id);
+        // $c=Customer::find($id);
         // $actions=$c->actions;
         $actions =Action::where('customers_id' , '=' , $id)->get();
         return view('action.all' , compact('actions'));

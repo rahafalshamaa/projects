@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <form action="" method="POST">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                           <label for="first_name">first name:</label>
@@ -47,6 +47,10 @@
                           <div class="form-group">
                             <label for="country">country:</label>
                             <input type="text" class="form-control" placeholder="Enter country" name="country" value="{{ $customer->country }}">
+                          </div>
+                          <div class="form-group">
+                            <label for="image">Image</label>
+                            <input type="file" class="form-control"  id="image" name="image">
                           </div>
                           <div class="form-group">
                             <label for="whatsapp">whatsapp:</label>
