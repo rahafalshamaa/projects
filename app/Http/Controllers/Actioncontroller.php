@@ -26,7 +26,7 @@ class Actioncontroller extends Controller
         {
             $image_name = rand() . time() . '.' . $request->image->getClientOriginalExtension();
         $action->image = $image_name;
-        $request->image->move('upload', $image_name);
+        $request->image->move('upload/actions', $image_name);
 
         }
         $action->save();

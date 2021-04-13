@@ -27,6 +27,8 @@ Route::get('/customer/all', 'Customercontroller@all')->name('all');
 Route::get('/customer/edit/{id}', 'Customercontroller@edit')->name('edit');
 Route::post('/customer/edit/{id}', 'Customercontroller@update')->name('edit');
 Route::get('/customer/delete/{id}', 'Customercontroller@delete')->name('delete');
+Route::get('/customer/profile/{id}', 'Customercontroller@profile')->name('profile');
+
 
 //Actioncontroller
 Route::get('/action/add', 'Actioncontroller@index')->name('add-action');

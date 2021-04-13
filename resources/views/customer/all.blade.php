@@ -32,6 +32,7 @@
                                 <td>
                                 <a href="/customer/edit/{{ $customer->id }}" class="btn btn-info">Edit</a>
                                 <a href="/customer/delete/{{ $customer->id }}" class="btn btn-danger">delete</a>
+                                <a href="/customer/profile/{{ $customer->id }}" class="btn btn-primary">Your profile</a>
                                 <a href="/customer/all_action/{{ $customer->id }}" class="btn btn-warning">All Actions</a>
                                 </td>
                               </tr>

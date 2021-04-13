@@ -14,11 +14,12 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('customer_store') }}" method="POST" enctype="multipart/form-data">
+                    <form  action="{{ route('customer_store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                           <label for="first_name">first name:</label>
                           <input type="text" class="form-control" placeholder="Enter first name" name="first_name" >
+
                         </div>
                         <div class="form-group">
                             <label for="last_name">last name:</label>

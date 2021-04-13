@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Customer;
 use Illuminate\Http\Request;
 
+
+
 class Customercontroller extends Controller
 {
     //
@@ -66,7 +68,7 @@ class Customercontroller extends Controller
         {
             $image_name = rand() . time() . '.' . $request->image->getClientOriginalExtension();
         $customer->image = $image_name;
-        $request->image->move('upload', $image_name);
+        $request->image->move('upload/customers', $image_name);
 
         }
         $customer->save();
@@ -77,6 +79,12 @@ class Customercontroller extends Controller
         $customer=Customer::find($id);
         $customer->delete();
         return redirect('/customer/all');
+
+    }
+    public function profile($id)
+    {
+         $customer=Customer::find($id);
+        return view('customer.profile' , compact('customer'));
 
     }
 }

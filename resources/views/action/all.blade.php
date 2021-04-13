@@ -18,7 +18,11 @@
                             <thead>
                               <tr>
                                 <th>ID</th>
-                                <th>actions</th>
+                                <th>Action Type</th>
+                                <th>Subject</th>
+                                <th>Date</th>
+                                <th>Image</th>
+
                               </tr>
                             </thead>
                             <tbody>
@@ -26,6 +30,10 @@
                               <tr>
                                 <td>{{ $action->id }}</td>
                                 <td>{{ $action->action_type }}</td>
+                                <td>{{ $action->subject }}</td>
+                                <td>{{ $action->date }}</td>
+                                <td><img src="{{ asset('upload/actions/' . $action->image )}}" alt="image" width="100px;" height="100px;"> </td>
+
 
                               </tr>
                               @endforeach
