@@ -32,7 +32,7 @@ class Customercontroller extends Controller
         {
             $image_name = rand() . time() . '.' . $request->image->getClientOriginalExtension();
         $customer->image = $image_name;
-        $request->image->move('upload', $image_name);
+        $request->image->move('upload/customers', $image_name);
 
         }
         $customer->save();
@@ -86,5 +86,11 @@ class Customercontroller extends Controller
          $customer=Customer::find($id);
         return view('customer.profile' , compact('customer'));
 
+    }
+    public function search()
+    {
+        $search_text=$_GET['query'];
+        $customers=Customer::where('first_name','LIKE','%'.$search_text.'%')->get();
+        return view('customer.search' , compact('customers'));
     }
 }

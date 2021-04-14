@@ -28,9 +28,12 @@ Route::get('/customer/edit/{id}', 'Customercontroller@edit')->name('edit');
 Route::post('/customer/edit/{id}', 'Customercontroller@update')->name('edit');
 Route::get('/customer/delete/{id}', 'Customercontroller@delete')->name('delete');
 Route::get('/customer/profile/{id}', 'Customercontroller@profile')->name('profile');
+Route::get('/customer/search', 'Customercontroller@search')->name('search-customer');
 
 
 //Actioncontroller
 Route::get('/action/add', 'Actioncontroller@index')->name('add-action');
 Route::post('/action/store', 'Actioncontroller@store')->name('action-store');
 Route::get('/customer/all_action/{id}', 'Actioncontroller@all')->name('all-actions');
+// Route::get('/action/delete/{id}', 'Actioncontroller@delete')->name('delete');
+Route::get('/action/search', 'Actioncontroller@search')->name('search-action');

@@ -67,7 +67,7 @@
                           </div>
 
 
-                        <button type="submit" class="btn btn-success">Add</button>
+                      <center>  <button type="submit" class="btn btn-secondary btn-block"> Add </button></center>
                       </form>
                 </div>
             </div>

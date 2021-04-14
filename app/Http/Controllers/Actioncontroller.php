@@ -40,4 +40,16 @@ class Actioncontroller extends Controller
         $actions =Action::where('customers_id' , '=' , $id)->get();
         return view('action.all' , compact('actions'));
     }
+    // public function delete($id)
+    // {
+    //     $action=Action::find($id);
+    //     $action->delete();
+    //     return view('action.all');
+    // }
+    public function search()
+    {
+        $search_text=$_GET['query'];
+        $actions=Action::where('action_type','LIKE','%'.$search_text.'%')->get();
+        return view('action.search' , compact('actions'));
+    }
 }
