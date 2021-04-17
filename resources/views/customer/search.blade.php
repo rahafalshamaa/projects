@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                   <form class="form-inline" type="get" action="{{ route('search-customer')}}">
+                   <form class="form-inline" type="get" action="{{ route('search_customer')}}">
                         <input class="form-control mr-sm-2" name="query" type="text" placeholder="Search">
                         <button class="btn btn-secondary" type="submit">Search</button>
                       </form>

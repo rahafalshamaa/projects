@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                   <form class="form-inline" type="get" action="{{ route('search-customer') }}">
+                   <form class="form-inline" type="get" action="{{ route('search_customer') }}">
                     <input class="form-control mr-sm-2" name="query" type="text" placeholder="Search">
                         <button class="btn btn-secondary" type="submit">Search</button>
                       </form>
@@ -37,10 +37,10 @@
                                 <td>{{ $customer->first_name }}</td>
                                 <td>{{ $customer->last_name }}</td>
                                 <td>
-                                <a href="/customer/edit/{{ $customer->id }}" class="btn btn-info">Edit</a>
-                                <a href="/customer/delete/{{ $customer->id }}" class="btn btn-danger">delete</a>
-                                <a href="/customer/profile/{{ $customer->id }}" class="btn btn-primary">Your profile</a>
-                                <a href="/customer/all_action/{{ $customer->id }}" class="btn btn-warning">All Actions</a>
+                                <a href="{{ route('edit_customer' , $customer->id) }}" class="btn btn-info">Edit</a>
+                                <a href="{{ route('delete_customer' , $customer->id) }}" class="btn btn-danger">delete</a>
+                                <a href="{{ route('profile_customer' , $customer->id) }}" class="btn btn-primary">Your profile</a>
+                                <a href="{{ route('all_actions' , $customer->id) }}" class="btn btn-warning">All Actions</a>
                                 </td>
                               </tr>
                               @endforeach

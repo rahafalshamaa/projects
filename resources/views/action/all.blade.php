@@ -6,10 +6,21 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                <form class="form-inline" type="get" action="{{ route('search-action')}}">
+                <form class="form-inline" type="get" action="{{ route('search_action')}}">
                     <input class="form-control mr-sm-2" name="query" type="text" placeholder="Search">
                     <button class="btn btn-secondary" type="submit">Search</button>
                   </form>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-secondary">Sort</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ route('sort_type') }}">type</a>
+                      <a class="dropdown-item" href="{{ route('sort_date_desc') }}">Date Desc</a>
+                      <a class="dropdown-item" href="{{ route('sort_date_asc') }}">Date Asc</a>
+
+                    </div>
+                  </div>
                 </div>
                 <div class="card-body">
                     @if (session('status'))

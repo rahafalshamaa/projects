@@ -35,8 +35,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Customers</a>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{ route('add') }}">add customer</a>
-                              <a class="dropdown-item" href="{{ route('all') }}">all customers</a>
+                              <a class="dropdown-item" href="{{ route('add_customer') }}">add customer</a>
+                              <a class="dropdown-item" href="{{ route('all_customers') }}">all customers</a>
 
                             </div>
                         </li>
@@ -44,7 +44,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Actions</a>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{ route('add-action') }}">add action</a>
+                              <a class="dropdown-item" href="{{ route('add_action') }}">add action</a>
                             </div>
                         </li>
                         @endauth

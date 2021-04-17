@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\action;
 use App\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Notifications\Action as NotificationsAction;
 
 class Actioncontroller extends Controller
@@ -51,5 +52,29 @@ class Actioncontroller extends Controller
         $search_text=$_GET['query'];
         $actions=Action::where('action_type','LIKE','%'.$search_text.'%')->get();
         return view('action.search' , compact('actions'));
+    }
+    public function sort_type()
+    {
+        $actions = DB::table('actions')
+        ->orderBy('action_type')
+        ->get();
+        return view('action.sortType' , compact('actions'));
+
+    }
+    public function sort_date_desc()
+    {
+        $actions = DB::table('actions')
+        ->orderBy('date', $direction='desc')
+        ->get();
+        return view('action.sort_date_desc' , compact('actions'));
+
+    }
+    public function sort_date_asc()
+    {
+        $actions = DB::table('actions')
+        ->orderBy('date', $direction='asc')
+        ->get();
+        return view('action.sort_date_asc' , compact('actions'));
+
     }
 }
