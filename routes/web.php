@@ -40,4 +40,6 @@ Route::get('/action/search', 'Actioncontroller@search')->name('search_action');
 Route::get('/action/sort_type', 'Actioncontroller@sort_type')->name('sort_type');
 Route::get('/action/sort_date_desc', 'Actioncontroller@sort_date_desc')->name('sort_date_desc');
 Route::get('/action/sort_date_asc', 'Actioncontroller@sort_date_asc')->name('sort_date_asc');
+Route::get('/action/showbydate', 'Actioncontroller@showbydate')->name('showbydate');
+Route::get('/action/showTypeByDate', 'Actioncontroller@showTypeByDate')->name('showTypeByDate');
 

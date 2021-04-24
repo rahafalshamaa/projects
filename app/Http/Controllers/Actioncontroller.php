@@ -58,7 +58,7 @@ class Actioncontroller extends Controller
         $actions = DB::table('actions')
         ->orderBy('action_type')
         ->get();
-        return view('action.sortType' , compact('actions'));
+        return view('action.sort.sortType' , compact('actions'));
 
     }
     public function sort_date_desc()
@@ -66,7 +66,7 @@ class Actioncontroller extends Controller
         $actions = DB::table('actions')
         ->orderBy('date', $direction='desc')
         ->get();
-        return view('action.sort_date_desc' , compact('actions'));
+        return view('action.sort.sort_date_desc' , compact('actions'));
 
     }
     public function sort_date_asc()
@@ -74,7 +74,22 @@ class Actioncontroller extends Controller
         $actions = DB::table('actions')
         ->orderBy('date', $direction='asc')
         ->get();
-        return view('action.sort_date_asc' , compact('actions'));
+        return view('action.sort.sort_date_asc' , compact('actions'));
+    }
+    public function showbydate()
+    {
+        $first_date=$_GET['first_date'];
+        $last_date=$_GET['last_date'];
+        $actions=Action::whereBetween('date', [$first_date, $last_date])->get();
+        return view('action.showbydate' , compact('actions'));
+    }
+    public function showTypeByDate()
+    {
+        $first_date=$_GET['fd'];
+        $last_date=$_GET['ld'];
+        $type=$_GET['typedate'];
+        $actions=Action::whereBetween('date', [$first_date, $last_date])->where('action_type','LIKE','%'.$type.'%')->get();
+        return view('action.showTypeByDate' , compact('actions'));
 
     }
 }
